@@ -8,8 +8,9 @@
 
 int bin_placer(va_list arguments)
 {
+	int p = 0;
 	int num = va_arg(arguments, int);
-	int count = int_bin(num);
+	int count = int_bin(num, &p);
 
 	return (count);
 }

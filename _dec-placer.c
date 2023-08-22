@@ -8,8 +8,9 @@
 
 int dec_placer(va_list arguments)
 {
-	int dec = va_arg(arguments, int);
-	int count = int_print(dec);
+	int len = 0;
+	long int dec = va_arg(arguments, int);
+	int count = int_print(dec, &len);
 
 	return (count);
 }
