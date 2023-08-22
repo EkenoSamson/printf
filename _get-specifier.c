@@ -2,7 +2,7 @@
 
 /**
  * get_specifier - assign the placeholder based the character next to '%';
- * @c: format specifier.
+ * @c: pointer to the format specifier.
  * Return: address of the placeholder.
  */
 
@@ -12,8 +12,10 @@ int (*get_specifier(char c))(va_list)
 		return (&char_placer);
 	else if (c == 's')
 		return (&str_placer);
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i')
 		return (&dec_placer);
+	else if (c == 'b')
+		return (&bin_placer);
 	else
 		return (NULL);
 }

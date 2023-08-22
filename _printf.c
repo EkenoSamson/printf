@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	int total_characters = 0, iterator = 0;
 	va_list arguments;
-	char holder;
+	char hdr;
 	int (*fun_p)(va_list);
 
 	if (format == NULL)
@@ -23,17 +23,17 @@ int _printf(const char *format, ...)
 		if (format[iterator] == '%')
 		{
 			iterator++;
-			holder = format[iterator];
+			hdr = format[iterator];
 
-			if (holder == '%')
+			if (hdr == '%')
 			{
-				write(1, &holder, 1);
+				write(1, &hdr, 1);
 				total_characters += 1;
 				iterator++;
 			}
-			else if (holder == 'c' || holder == 's' || holder == 'd')
+			else if (hdr == 'c' || hdr == 's' || hdr == 'd' || hdr == 'b' || hdr == 'i')
 			{
-				fun_p = get_specifier(holder);
+				fun_p = get_specifier(hdr);
 				total_characters = total_characters + fun_p(arguments);
 				iterator++;
 			}
