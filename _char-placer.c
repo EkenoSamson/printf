@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * char_placer - replace c with character argument.
- * @arguments: argument it receives.
+ * char_placer - replace c with a character argument.
+ * @arguments: argument it receives through the variadic func.
  * Return: 1 (number of character printed).
  */
 
